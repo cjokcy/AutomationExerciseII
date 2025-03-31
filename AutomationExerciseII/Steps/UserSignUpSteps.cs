@@ -25,6 +25,7 @@ namespace AutomationExerciseII.Steps
         [Given(@"the user navigates to the ""(.*)""")]
         public void GivenTheUserNavigatesToThe(string url)
         {
+            _driverHelper.Driver.Manage().Window.Maximize();
             _driverHelper.Driver.Navigate().GoToUrl(url);
             signUpPage.AcceptConsent();
             Assert.IsTrue(signUpPage.HomePageIsVisible());
